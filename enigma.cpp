@@ -12,6 +12,24 @@ Enigma::Enigma(std::vector<Rotor> _rotorList, char reflector, std::vector<char*>
 	}
 	rotorList = _rotorList;
 	plugboard = _plugboard;
+
+	if(plugboard.size()>0){
+		std::cout << "Plugboard settings------------" << std::endl;
+
+		for(int i=0;i<plugboard.size();i++){
+			std::cout << plugboard[i][0] << plugboard[i][1] << " ";
+		}
+		std::cout << std::endl;
+	}
+	std::cout << "Reflector: " << reflector << std::endl;
+	std::cout << "Rotor settings-------" << std::endl;
+	std::cout << "Slow    Middle  Fast" << std::endl;
+	std::cout << rotorList[2].getName() << " " << rotorList[1].getName() << " " << rotorList[0].getName() << std::endl;
+	std::cout << "Letter values:" << std::endl;
+	std::cout << toChar(rotorList[2].getValue(),true) << "       " << toChar(rotorList[1].getValue(),true) << "       " << toChar(rotorList[0].getValue(),true) << std::endl;
+	std::cout << "Offset numbers:" << std::endl;
+	std::cout << rotorList[2].getOffset() << "      " << rotorList[1].getOffset() << "       " << rotorList[0].getOffset() << std::endl;
+	std::cout << std::endl;
 }
 
 
