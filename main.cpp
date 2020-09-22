@@ -14,18 +14,18 @@ int main(int argc, char const *argv[])
 	char plugNine [2] = {'Q', 'R'};
 	char plugTen [2] = {'S', 'T'};
 	std::vector<char*> plugboard;
-	plugboard.push_back(plugOne);
+	/*plugboard.push_back(plugOne);
 	plugboard.push_back(plugTwo);
 	plugboard.push_back(plugThree);
 	plugboard.push_back(plugFour);
-	plugboard.push_back(plugFive);
+	plugboard.push_back(plugFive);*/
 	
 	/*Rotor fastRotor("i",'N',1);
 	Rotor middleRotor("ii",'D',1);
 	Rotor slowRotor("iii",'A',1);*/
 
-	Rotor fastRotor("i",'L',1);
-	Rotor middleRotor("ii",'Q',1);
+	Rotor fastRotor("i",'N',1);
+	Rotor middleRotor("ii",'D',1);
 	Rotor slowRotor("iii",'A',1);
 
 	std::vector<Rotor> list;
@@ -33,10 +33,16 @@ int main(int argc, char const *argv[])
 	list.push_back(middleRotor);
 	list.push_back(slowRotor);
 
-	Enigma e(list, 'B', plugboard);
+	//Create two objects with the same settings, one for encryption, and one for decryption.
+	Enigma encryption(list, 'B', plugboard);
+	Enigma decryption(list, 'B', plugboard);
 
-	std::cout << e.encryptString("kongsberg") << std::endl;
-
+	std::string original = "kongsberg";
+	std::string kryptert = encryption.encryptString(original);
+	std::string dekryptert = decryption.encryptString(kryptert);
+	std::cout << "original: " << original << std::endl;
+	std::cout << "kryptert: " << kryptert << std::endl;
+	std::cout << "dekryptert: " << dekryptert << std::endl;
 	return 0;
 }
 

@@ -17,7 +17,7 @@ private:
 	std::vector<Rotor> rotorList;
 	bool doubleStep = false;
 	void step();
-	char toChar(int val);
+	char toChar(int val, bool uppercase);
 	std::vector<char*> plugboard;
 	std::string reflectorString;
 };
