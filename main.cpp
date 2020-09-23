@@ -32,7 +32,7 @@ int main(int argc, char const *argv[])
 	Rotor middleRotor("iv",'D',9);
 	Rotor slowRotor("v",'A',11);
 
-	//The fast rotor first to the vector.
+	//The fast rotor is added first to the vector.
 	std::vector<Rotor> list;
 	list.push_back(fastRotor);
 	list.push_back(middleRotor);

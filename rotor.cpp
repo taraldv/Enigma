@@ -32,7 +32,7 @@ int Rotor::getValue(){
 } 
 
 int Rotor::getOffset(){
-	return offset;
+	return offset+1;
 }
 
 //Returns the name with a fixed size.
